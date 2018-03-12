@@ -1,0 +1,263 @@
+/*...................................fonts..................*/
+
+@font-face {
+    font-family: Roboto-Light;
+    src: url(../fonts/Roboto-Light.ttf);
+}
+
+@font-face {
+    font-family: Roboto-Bold;
+    src: url(../fonts/Roboto-Bold.ttf);
+}
+
+@font-face {
+    font-family: Roboto-Medium;
+    src: url(../fonts/Roboto-Medium.ttf);
+}
+
+@font-face {
+    font-family: Marmelad-Regular;
+    src: url(../fonts/Marmelad-Regular.ttf);
+}
+@font-face {
+    font-family: Pacifico-Regular;
+    src: url(../fonts/Pacifico-Regular.ttf);
+}
+@font-face {
+    font-family: Arsenal-Regular;
+    src: url(../fonts/Arsenal-Regular.ttf);
+}
+
+/*.............................main header................................*/
+
+.main-header{
+    border-radius: 0px;
+    font-family: Roboto-Light;
+    background: #3e3431;
+    border: none;
+    margin-bottom: 0px;
+}
+.main-header .navbar-nav>li>a{
+    color: #ffffff;
+}
+.main-header .navbar-brand{
+    font-family: Pacifico-Regular;
+    font-size: 25px;
+    color: #ffffff;
+}
+.navbar-brand{
+    padding: 12px;
+}
+/*...........................login.....................................*/
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    background-image: url("../img/rings_couple_wedding_silver_flowers_80327_1920x1080.jpg");
+    overflow-x: hidden;
+    transition: 0.5s;
+    background-size: cover;
+}
+
+.overlay-content {
+    position: relative;
+    top: 14%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+
+}
+.overlay-content h3{
+    font-family: Pacifico-Regular;
+    font-size: 40px;
+}
+
+.overlay-content .login-content h4{
+    font-family: Arsenal-Regular;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.overlay-content .login-content input{
+    padding: 7px 7px;
+    border: none;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    width: 60%;
+    font-family: Roboto-Light;
+    position: relative;
+}
+.overlay-content .login-content .input-field{
+    position: relative;
+}
+.overlay-content .login-content .input-field i{
+    position: absolute;
+    top: 10px;
+    right: 144px;
+}
+.overlay-content .login-content button{
+    width: 60%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #204d74;
+    color: #ffffff;
+    font-family: Arsenal-Regular;
+    font-size: 20px;
+}
+.overlay-content .login-content .social-links i{
+    font-size: 35px;
+}
+.overlay-content .login-content h5{
+    font-family: Roboto-Light;
+    font-size: 14px;
+    color: #ffffff;
+}
+.overlay-content .login-content .social-links .fa-facebook-square{
+    color: #204d74;
+    padding-right: 20px;
+}
+.overlay-content .login-content .social-links .fa-google-plus-square{
+    color: #e02828;
+}
+.overlay-content .login-content input:focus{
+   outline: none;
+}
+.overlay .closebtn {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    /*display: block;*/
+    transition: 0.3s;
+}
+.overlay-content .login-content span{
+    font-family: Roboto-Light;
+    color: #ffffff;
+}
+.overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+/*..............................sign up................................*/
+.signup-sec {
+    background-image: url("../img/rings_couple_wedding_silver_flowers_80327_1920x1080.jpg");
+    height: 95vh;
+    background-size: cover;
+}
+.signup-content {
+
+    width: 100%;
+    text-align: center;
+    margin-top: 145px;
+
+}
+
+.signup-sec h3{
+    font-family: Pacifico-Regular;
+    font-size: 40px;
+}
+
+.signup-sec .signup-content h4{
+    font-family: Arsenal-Regular;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.signup-sec .signup-content input{
+    padding: 7px 7px;
+    border: none;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    width: 60%;
+    font-family: Roboto-Light;
+    position: relative;
+}
+.signup-sec .signup-content .input-field{
+    position: relative;
+}
+.signup-sec .signup-content .input-field i{
+    position: absolute;
+    top: 10px;
+    right: 144px;
+}
+.signup-sec .signup-content button{
+    width: 60%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #204d74;
+    color: #ffffff;
+    font-family: Arsenal-Regular;
+    font-size: 20px;
+}
+.signup-sec .signup-content .social-links i{
+    font-size: 35px;
+}
+.signup-sec .signup-content h5{
+    font-family: Roboto-Light;
+    font-size: 14px;
+    color: #ffffff;
+}
+.signup-sec .signup-content .social-links .fa-facebook-square{
+    color: #204d74;
+    padding-right: 20px;
+    z-index: 1000;
+}
+.signup-sec .signup-content .social-links .fa-google-plus-square{
+    color: #e02828;
+    z-index: 1000;
+}
+.signup-sec .signup-content input:focus{
+    outline: none;
+}
+
+.signup-sec .signup-content span{
+    font-family: Roboto-Light;
+    color: #ffffff;
+}
+.signup-sec a:hover, .signup-sec a:focus {
+    color: #f1f1f1;
+}
+
+/*..................................index page..............................................*/
+.main-caro-sec .carousel-inner{
+   position: relative;
+}
+.main-caro-sec .carousel-inner .caro-text{
+    position: absolute;
+     bottom: 20%;
+    left: 30%;
+    color: #ffffff;
+    z-index: 10000;
+    font-family: Arsenal-Regular;
+
+}
+.main-caro-sec .carousel-inner .caro-text button{
+    padding: 10px 20px;
+    border: none;
+    background: #204d74;
+    color: #ffffff;
+    font-family: Arsenal-Regular;
+    font-size: 20px;
+}
+.main-caro-sec .carousel-inner .caro-text button:focus{
+    outline: none;
+}
