@@ -5,9 +5,12 @@
  * Date: 3/24/18
  * Time: 5:44 PM
  */
-session_start();
+# Db connection
+include_once "db_connection.php";
 
-$is_user_logged_in = false; // To be used as a global variable to track if the user is logged in
+$is_user_logged_in = "FALSE"; // To be used as a global variable to track if the user is logged in
+
+session_start();
 
 # Authenticate a user who is already logged in
 if (!empty($_SESSION)) {
@@ -22,7 +25,7 @@ if (!empty($_SESSION)) {
         $user = mysqli_fetch_array($result_user);
 
         if (!empty($user)) {
-            $is_user_logged_in = true;
+            $is_user_logged_in = "TRUE";
         }
     }
 }

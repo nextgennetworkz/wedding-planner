@@ -7,7 +7,7 @@
  */
 // Validate if the user is logged in
 include_once "config/validate_session.php";
-if ($is_user_logged_in) {
+if ($is_user_logged_in == "TRUE") {
     // Since the user is already signed up, redirect to home page
     header('Location: index.php');
 }
@@ -34,7 +34,7 @@ $user = mysqli_fetch_array($result_user);
 # If not, let's add it to the database
 if (empty($user)) {
     $result_insert_user = mysqli_query($conn, "INSERT INTO user (oauth_uid, name, email, oauth_provider) VALUES ('$id', '$name', '$email', 'facebook')");
-    $result_select_user = msyql_query($conn, "SELECT id, name, oauth_uid, oauth_provider FROM user WHERE id = " . mysqli_insert_id());
+    $result_select_user = mysqli_query($conn, "SELECT id, name, oauth_uid, oauth_provider FROM user WHERE id = " . mysqli_insert_id($conn));
     $user = mysqli_fetch_array($result_select_user);
 
     # let's set session values
@@ -47,7 +47,13 @@ if (empty($user)) {
     header('Content-Type: application/json');
     print json_encode("User sign up succeeded.");
 } else {
-    # User already signed up. Let's ask to sign in
+    # let's set session values even if the user is already signed in
+    $_SESSION['id'] = $user['id'];
+    $_SESSION['name'] = $user['name'];
+    $_SESSION['oauth_uid'] = $user['oauth_uid'];
+    $_SESSION['oauth_provider'] = $user['oauth_provider'];
+
+    # User already signed up. Let's say this to the frontend
     header('HTTP/1.1 409 Conflict');
     header('Content-Type: application/json; charset=UTF-8');
     die(json_encode(array('message' => 'User already signed up.', 'code' => 409)));
