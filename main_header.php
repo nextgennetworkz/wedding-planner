@@ -1,4 +1,4 @@
-
+<!-- Header -->
 <section>
     <nav class="navbar navbar-inverse main-header">
         <div class="container-fluid">
@@ -25,6 +25,8 @@
         </div>
     </nav>
 </section>
+
+<!--  -->
 <div id="myNav" class="overlay">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <div class="overlay-content">
@@ -47,7 +49,7 @@
                 <span>Don't you have an account? <a>Sign up today</a></span>
             </div>
         </div>
-
     </div>
 </div>
+
 <?php require_once 'footer_links.php'; ?>
