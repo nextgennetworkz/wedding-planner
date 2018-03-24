@@ -81,14 +81,14 @@
     // See statusChangeCallback() for when this call is made.
     function fetchUserInfo() {
         console.log('Welcome!  Fetching your information.... ');
-        FB.api('/me', function (response) {
+        FB.api('/me?fields=name,email', function (response) {
             console.log('Successful login for: ' + response.name);
 
             // Registration and authentication of the user
             $.ajax({
                 url: "login_facebook_registration_and_authentication.php",
                 type: "POST",
-                data: {id: response.id, name: response.name},
+                data: {id: response.id, name: response.name, email: response.email},
                 dataType: "json",
                 success: function (response) {
                     // Rredirect user on success
