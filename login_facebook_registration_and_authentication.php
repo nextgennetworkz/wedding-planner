@@ -8,7 +8,7 @@
 // Validate if the user is logged in
 include_once "config/validate_session.php";
 if ($is_user_logged_in == "TRUE") {
-    // Since the user is already signed up, redirect to home page
+    // Since the user is already logged in, redirect to home page
     header('Location: index.php');
 }
 
