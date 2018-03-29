@@ -1,4 +1,6 @@
-<?php include_once "config/validate_session.php"; ?>
+<?php
+include_once "config/validate_session.php";
+?>
 
     <!-- Header -->
     <section>
@@ -25,6 +27,7 @@
                         if ($is_user_logged_in == "TRUE") {
                             ?>
                             <p style="color: white"><?php echo $_SESSION['name']; ?></p>
+                            <p style="color: white"><a href="logout_process.php">log out</a></p>
                             <?php
                         } else {
                             ?>
@@ -46,15 +49,19 @@
         <div class="overlay-content">
             <div class="col-sm-6 col-sm-offset-3">
                 <div class="login-content">
-                    <h3>Wedding Dreamer</h3>
-                    <h4>Login to your account</h4>
-                    <div class="input-field">
-                        <input type="email" placeholder="Email"><i class="fa fa-envelope"></i>
-                    </div>
-                    <div class="input-field">
-                        <input type="password" placeholder="Password"><i class="fa fa-lock"></i>
-                    </div>
-                    <button>Login</button>
+                    <form id="login_form" name="login_form" action="login_process.php" method="post">
+                        <h3>Wedding Dreamer</h3>
+                        <h4>Login to your account</h4>
+                        <div class="input-field">
+                            <input id="email" name="email" type="email" placeholder="Email" required="required">
+                            <i class="fa fa-envelope"></i>
+                        </div>
+                        <div class="input-field">
+                            <input id="password" name="password" type="password" placeholder="Password" required="required">
+                            <i class="fa fa-lock"></i>
+                        </div>
+                        <button>Login</button>
+                    </form>
                     <h5>Or Login With Social Media</h5>
                     <div class="social-links">
                         <a><i class="fa fa-facebook-square"></i></a>

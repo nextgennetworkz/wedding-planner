@@ -86,7 +86,7 @@
 
             // Registration and authentication of the user
             $.ajax({
-                url: "login_facebook_registration_and_authentication.php",
+                url: "sign_up_facebook_registration_and_authentication.php",
                 type: "POST",
                 data: {id: response.id, name: response.name, email: response.email},
                 dataType: "json",

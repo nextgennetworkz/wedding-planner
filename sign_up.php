@@ -21,6 +21,7 @@ if ((empty($name)) || (empty($email)) || (empty($password))) {
         window.location.replace("signup.php");
     </script>
     <?php
+    exit();
 }
 
 $encrypted_password = md5($password); // Encrypt password
@@ -54,5 +55,5 @@ if (empty($result_insert_user)) {
 <!-- Redirect to login page, so the user can login to the newly created account -->
 <script type="text/javascript">
     alert("Sign up succeeded.\nPlease login to continue.");
-    window.location.replace("login.php");
+    window.location.replace("signup.php#");
 </script>

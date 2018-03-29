@@ -9,23 +9,23 @@
                         <h3>Wedding Dreamer</h3>
                         <h4>Sign up Today</h4>
                         <div class="input-field">
-                            <input id="name" name="name" type="text" placeholder="Username" required="required">
+                            <input id="name_sign_up" name="name" type="text" placeholder="Username" required="required">
                             <i class="fa fa-user"></i>
                         </div>
                         <div class="input-field">
-                            <input id="email" name="email" type="email" placeholder="Email" required="required">
+                            <input id="email_sign_up" name="email" type="email" placeholder="Email" required="required">
                             <i class="fa fa-envelope"></i>
                         </div>
                         <div class="input-field">
-                            <input id="password" name="password" type="password" placeholder="Password"
+                            <input id="password_sign_up" name="password" type="password" placeholder="Password"
                                    required="required">
                             <i class="fa fa-lock"></i>
                         </div>
                         <button>Continue></button>
                         <h5>Or Signup with social media</h5>
                         <div class="social-links">
-                            <a href="login_facebook.php"><i class="fa fa-facebook-square"></i></a>
-                            <a href="login_google_plus.php"><i class="fa fa-google-plus-square"></i></a>
+                            <a href="sign_up_facebook.php"><i class="fa fa-facebook-square"></i></a>
+                            <a href="sign_up_google_plus.php"><i class="fa fa-google-plus-square"></i></a>
                         </div>
                     </div>
                 </form>

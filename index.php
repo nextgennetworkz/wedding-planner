@@ -1,5 +1,7 @@
-<?php require_once 'header_links.php'; ?>
-<?php require_once 'main_header.php'; ?>
+<?php
+require_once 'header_links.php';
+require_once 'main_header.php';
+?>
 
     <section class="main-caro-sec">
         <div id="carousel slide" class="carousel slide" data-ride="carousel">
@@ -14,9 +16,7 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
                 <div class="caro-text">
-                    <h1>Join With us to plan your Dream day..
-                        <button>Join Now</button>
-                    </h1>
+                    <h1>Join With us to plan your Dream day...</h1>
                 </div>
                 <div class="item active">
                     <img src="img/wedding-reportage-1920x1000.jpg" class="img-responsive" alt="Chania"

@@ -34,7 +34,7 @@ $user = mysqli_fetch_array($result_user);
 # If not, let's add it to the database
 if (empty($user)) {
     $result_insert_user = mysqli_query($conn, "INSERT INTO user (oauth_uid, name, email, oauth_provider) VALUES ('$id', '$name', '$email', 'facebook')");
-    $result_select_user = mysqli_query($conn, "SELECT id, name, oauth_uid, oauth_provider FROM user WHERE id = " . mysqli_insert_id($conn));
+    $result_select_user = mysqli_query($conn, "SELECT * FROM user WHERE id = " . mysqli_insert_id($conn));
     $user = mysqli_fetch_array($result_select_user);
 
     # let's set session values
