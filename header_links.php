@@ -9,6 +9,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
     <link href="css/bootstrap-theme.min.css" rel="stylesheet"/>
     <link href="css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="css/animate.css" rel="stylesheet"/>
     <link rel="stylesheet" type="text/css" href="css/animate.css"/>
     <link href="css/styles.css" rel="stylesheet"/>
     <link href="css/responsive.css" rel="stylesheet"/>
