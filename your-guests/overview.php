@@ -6,12 +6,14 @@ include_once "../main_header.php";
 if ($is_user_logged_in == "FALSE") {
     header('Location: index.php');
 }
-$user_id = $_SESSION['user_id'];
+$user_id = $_SESSION['id'];
 
 // Retrieve all guests of currently logged in user
 $result_guests = mysqli_query($conn, "SELECT * FROM guest WHERE user_id = $user_id");
 
 $no_of_notified_guests = $no_of_attending_guests = $no_of_not_attending_guests = $no_of_not_answered_guests = $no_of_total_guests = 0;
+
+//
 ?>
 <section class="overview-sec" xmlns="http://www.w3.org/1999/html">
     <div class="container overview-cont">
@@ -26,8 +28,10 @@ $no_of_notified_guests = $no_of_attending_guests = $no_of_not_attending_guests =
             <div class="col-sm-9">
                 <div class="right-side">
                     <h2><?php echo $_SESSION['name']; ?>, Let's add your guests to guest list.</h2>
-                    <p><i class="fa fa-calendar"></i> <?php echo $no_of_notified_guests; ?> guests notified: <a href="">Send Save the Date</a></p>
-                    <p><i class="fa fa-users"></i> <?php echo $no_of_attending_guests; ?> attending | <?php echo $no_of_not_attending_guests; ?> not attending
+                    <p><i class="fa fa-calendar"></i> <?php echo $no_of_notified_guests; ?> guests notified: <a href="">Send
+                            Save the Date</a></p>
+                    <p><i class="fa fa-users"></i> <?php echo $no_of_attending_guests; ?> attending
+                        | <?php echo $no_of_not_attending_guests; ?> not attending
                         | <?php echo $no_of_not_answered_guests; ?> not answered. <a href="">Send RSVP email</a></p>
                 </div>
             </div>
@@ -55,12 +59,12 @@ $no_of_notified_guests = $no_of_attending_guests = $no_of_not_attending_guests =
                 <tr><?php echo $guest['email']; ?></tr>
                 <tr><?php echo $guest['address']; ?></tr>
                 <tr><?php echo $guest['mobile_number']; ?></tr>
-            <?php
+                <?php
             }
             ?>
             </tbody>
         </table>
-    <?php
+        <?php
     }
     ?>
 </section>

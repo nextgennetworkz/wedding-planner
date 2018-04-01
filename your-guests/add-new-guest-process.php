@@ -18,10 +18,11 @@ $email = $_POST['email'];
 $address = $_POST['address'];
 $mobile_number = $_POST['mobile_number'];
 $attendance = $_POST['attendance'];
-$user_id = $_SESSION['user_id'];
+$user_id = $_SESSION['id'];
 
 // Persist guest
-$result_insert_guest = mysqli_query($conn, "INSERT INTO guest (first_name, last_name, email, address, mobile_number, attendance, notified, user_id) VALUES ('$first_name', '$last_name', '$email', '$address', '$mobile_number', '$attendance', false, $user_id");
+$query = "INSERT INTO guest (first_name, last_name, email, address, mobile_number, attendance, user_id) VALUES ('$first_name', '$last_name', '$email', '$address', '$mobile_number', '$attendance', $user_id)";
+$result_insert_guest = mysqli_query($conn, $query);
 
 // Alert and redirect
 if ($result_insert_guest) {
@@ -34,7 +35,7 @@ if ($result_insert_guest) {
 } else {
     ?>
     <script type="text/javascript">
-        alert("Something went wrong.\nYou can try again or skip for now.");
+        alert("Something went wrong.\nYou can try again or skip for now.\n<?php echo mysqli_error($conn); ?>");
         window.location.replace("add-new-guest.php");
     </script>
     <?php

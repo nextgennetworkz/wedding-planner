@@ -19,10 +19,11 @@ include_once "config/validate_session.php";
                         <?php
                         if ($is_user_logged_in == "TRUE") {
                             ?>
-                            <li><a href="your-guests/overview.php"><span class="glyphicon glyphicon-user"></span> Guests</a></li>
+                            <li><a href="your-guests/overview.php"><span class="glyphicon glyphicon-user"></span> Guests</a>
+                            </li>
                             <li><a href="#"> Page 2</a></li>
 
-                        <?php
+                            <?php
                         }
                         ?>
                     </ul>
@@ -31,8 +32,11 @@ include_once "config/validate_session.php";
                         <?php
                         if ($is_user_logged_in == "TRUE") {
                             ?>
-                            <li><a href="signup.php"><span class="glyphicon glyphicon-user"></span> <?php echo $_SESSION['name']; ?></a></li>
-                            <li><a href="logout_process.php"><span class="glyphicon glyphicon-log-out"></span> log out</a></li>
+                            <li><a href="signup.php"><span
+                                            class="glyphicon glyphicon-user"></span> <?php echo $_SESSION['name']; ?>
+                                </a></li>
+                            <li><a href="logout_process.php"><span class="glyphicon glyphicon-log-out"></span> log
+                                    out</a></li>
 
                             <?php
                         } else {
@@ -59,11 +63,12 @@ include_once "config/validate_session.php";
                         <h3>Wedding Dreamer</h3>
                         <h4>Login to your account</h4>
                         <div class="input-field">
-                            <input id="email" name="email" type="email" placeholder="Email" required="required">
+                            <input id="login_email" name="email" type="email" placeholder="Email" required="required">
                             <i class="fa fa-envelope"></i>
                         </div>
                         <div class="input-field">
-                            <input id="password" name="password" type="password" placeholder="Password" required="required">
+                            <input id="login_password" name="password" type="password" placeholder="Password"
+                                   required="required">
                             <i class="fa fa-lock"></i>
                         </div>
                         <button>Login</button>
