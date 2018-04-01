@@ -248,7 +248,9 @@
     color: #ffffff;
     z-index: 10000;
     font-family: Arsenal-Regular;
-
+}
+.main-caro-sec .item img{
+    filter: brightness(70%);
 }
 .main-caro-sec .carousel-inner .caro-text button{
     padding: 10px 20px;
@@ -260,4 +262,112 @@
 }
 .main-caro-sec .carousel-inner .caro-text button:focus{
     outline: none;
+}
+/*.........................overview page...........................................................*/
+.overview-sec{
+    background: #f0f0f0;
+    min-height: 100vh;
+}
+.overview-sec .overview-cont{
+    background: #e2e2e2;
+    padding: 20px 0px;
+    margin-top: 20px;
+}
+.overview-sec .overview-cont h2{
+    font-family: Arsenal-Regular;
+}
+.overview-sec .overview-cont .count-wrp p{
+    font-family: Arsenal-Regular;
+    font-size: 17px;
+    padding-bottom: 0px;
+}
+.overview-sec .overview-cont .count-wrp span{
+    font-family: Arsenal-Regular;
+    font-weight: 800;
+    font-size: 35px;
+}
+.overview-sec .overview-cont .count-wrp{
+    padding: 10px;
+    text-align: center;
+    background: #ffffff;
+    border-radius: 7px;
+    margin-left: 16px;
+}
+.overview-sec .overview-cont .count-wrp button{
+    width: 100%;
+    background: #43c4c5;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+}
+button:focus{
+    outline: none;
+}
+a{
+    text-decoration: none;
+}
+.overview-sec .overview-cont .count-wrp a{
+    color: #ffffff;
+    font-family: Roboto-Light;
+    font-size: 18px;
+    text-decoration: none;
+}
+.overview-sec .overview-cont .right-side{
+    font-family: Arsenal-Regular;
+    font-size: 17px;
+    padding: 15px;
+}
+/*............................................add new guest page.............................*/
+.add-guest-sec{
+    font-family: Arsenal-Regular;
+    color: #838383;
+    background: #f0f0f0;
+    min-height: 100vh;
+}
+.add-guest-wrp{
+    padding-top: 20px;
+}
+.add-guest-sec legend{
+    color: #204d74;
+}
+.add-guest-sec h1{
+    color: #43c4c5;
+}
+.add-guest-sec input{
+    border: inherit;
+    padding: 7px;
+    border-radius: 4px;
+}
+.add-guest-sec input:focus{
+    outline: none;
+}
+.add-guest-sec .left-content input{
+    width: 70%;
+}
+.add-guest-sec .input-wrp{
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+.add-guest-sec .add-btn{
+    padding: 10px 40px;
+    color: #ffffff;
+    background: #245580;
+    border-radius: 5px;
+    font-size: 20px;
+    border: none;
+    margin-top: 20px;
+    width: 50%;
+}
+.add-guest-sec .back-btn{
+    padding: 5px 30px;
+    font-size: 15px;
+    background: #43c4c5;
+    color: #ffffff;
+    border-radius: 5px;
+    border: none;
+}
+.add-guest-sec button a{
+    text-decoration: none;
+    color: #ffffff;
 }

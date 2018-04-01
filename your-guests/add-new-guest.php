@@ -7,26 +7,60 @@
  */
 // Allow only logged in users
 include_once "../config/validate_session.php";
+include_once "../header_links.php";
+include_once "../main_header.php";
 if ($is_user_logged_in == "FALSE") {
     header('Location: ../index.php');
 }
 ?>
+<section class="add-guest-sec">
+    <div class="container add-guest-wrp">
+        <button class="back-btn"><a href="overview.php">< Back</a></button>
+        <form action=""add-new-guest-process.php" method="post">
+            <h1>NEW GUEST</h1>
+            <div class="row">
+                <div class="col-sm-6 left-content">
+                    <fieldset>
+                        <legend>Add a new contact to your guest list</legend>
+                        <div class="input-wrp">
+                            <span>First name *</span><br>
+                            <input type="text" id="first_name" name="first_name" required="required"><br>
+                        </div>
+                        <div class="input-wrp">
+                            <span>Last name </span><br>
+                            <input type="text" id="last_name" name="last_name"><br>
+                        </div>
+                        <div class="input-wrp">
+                            <span>Email</span><br>
+                            <input type="email" id="email" name="email" required="required"><br>
+                        </div>
+                        <div class="input-wrp">
+                            <span>Address</span><br>
+                            <input type="text" id="address" name="address"><br>
+                        </div>
+                        <div class="input-wrp">
+                            <span>Mobile</span><br>
+                            <input type="tel" id="mobile_number" name="mobile_number"><br>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="col-sm-6">
+                    <fieldset>
+                        <legend>Attendance</legend>
+                        <div class="input-wrp">
+                            <input type="radio" name="attendance" value="no_response"> No response<br>
+                        </div>
+                        <div class="input-wrp">
+                            <input type="radio" name="attendance" value="not_attending"> Not attending<br>
+                        </div>
+                        <div class="input-wrp">
+                            <input type="radio" name="attendance" value="attending"> Attending<br>
+                        </div>
+                        <button class="add-btn">Add</button>
+                    </fieldset>
+                </div>
+            </div>
 
-<form action="add-new-guest-process.php" method="post">
-    <h1>New guest</h1>
-    <fieldset>
-        <legend>Add a new contact to your guest list:</legend>
-        First name *: <input type="text" id="first_name" name="first_name" required="required"><br>
-        Last name: <input type="text" id="last_name" name="last_name"><br>
-        Email: <input type="email" id="email" name="email" required="required"><br>
-        Address: <input type="text" id="address" name="address"><br>
-        Mobile: <input type="tel" id="mobile_number" name="mobile_number"><br>
-    </fieldset>
-    <fieldset>
-        <legend>Attendance</legend>
-        <input type="radio" name="attendance" value="no_response"> No response<br>
-        <input type="radio" name="attendance" value="not_attending"> Not attending<br>
-        <input type="radio" name="attendance" value="attending"> Attending<br>
-    </fieldset>
-    <input type="submit">
-</form>
+        </form>
+    </div>
+</section>
