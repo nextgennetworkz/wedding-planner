@@ -37,29 +37,32 @@ $no_of_notified_guests = $no_of_attending_guests = $no_of_not_attending_guests =
             </div>
         </div>
     </div>
-
     <!-- Guest list -->
     <?php
     if ($result_guests) {
         ?>
         <table class="table">
             <thead>
-            <th>First name</th>
-            <th>Last name</th>
-            <th>email</th>
-            <th>Address</th>
-            <th>Mobile number</th>
+                <tr>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>email</th>
+                    <th>Address</th>
+                    <th>Mobile number</th>
+                </tr>
             </thead>
             <tbody>
             <?php
             while ($guest = mysqli_fetch_array($result_guests)) {
                 ?>
-                <tr><?php echo $guest['first_name']; ?></tr>
-                <tr><?php echo $guest['last_name']; ?></tr>
-                <tr><?php echo $guest['email']; ?></tr>
-                <tr><?php echo $guest['address']; ?></tr>
-                <tr><?php echo $guest['mobile_number']; ?></tr>
-                <?php
+                <tr>
+                    <td><?php echo $guest['first_name']; ?></td>
+                    <td><?php echo $guest['last_name']; ?></td>
+                    <td><?php echo $guest['email']; ?></td>
+                    <td><?php echo $guest['address']; ?></td>
+                    <td><?php echo $guest['mobile_number']; ?></td>
+                </tr>
+            <?php
             }
             ?>
             </tbody>

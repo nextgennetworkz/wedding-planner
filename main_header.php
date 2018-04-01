@@ -32,11 +32,15 @@ include_once "config/validate_session.php";
                         <?php
                         if ($is_user_logged_in == "TRUE") {
                             ?>
-                            <li><a href="signup.php"><span
+                            <li class="dropdown"><a href="signup.php"><span
                                             class="glyphicon glyphicon-user"></span> <?php echo $_SESSION['name']; ?>
-                                </a></li>
-                            <li><a href="logout_process.php"><span class="glyphicon glyphicon-log-out"></span> log
-                                    out</a></li>
+                                </a>
+                                <ul class="dropdown-content">
+                                    <li><a href="me/edit-profile.php">Edit Profile</a></li>
+                                    <li><a href="logout_process.php">Log out</a></li>
+                                </ul>
+                            </li>
+
 
                             <?php
                         } else {
