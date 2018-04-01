@@ -1,7 +1,6 @@
 <?php
 include_once "config/validate_session.php";
 ?>
-
     <!-- Header -->
     <section>
         <nav class="navbar navbar-inverse main-header">
@@ -12,22 +11,29 @@ include_once "config/validate_session.php";
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Wedding Dreamer</a>
+                    <a class="navbar-brand" href="index.php">Wedding Dreamer</a>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#">Page 1</a></li>
-                        <li><a href="#">Page 2</a></li>
-                        <li><a href="#">Page 3</a></li>
+                        <!-- Need to check if the user is logged in or not. If the user is logged in, we sholdn't be showing the below links -->
+                        <?php
+                        if ($is_user_logged_in == "TRUE") {
+                            ?>
+                            <li><a href="your-guests/overview.php"><span class="glyphicon glyphicon-user"></span> Guests</a></li>
+                            <li><a href="#"> Page 2</a></li>
+
+                        <?php
+                        }
+                        ?>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Need to check if the user is logged in or not. If the user is logged in, we sholdn't be showing the sign up and sign in links -->
                         <?php
                         if ($is_user_logged_in == "TRUE") {
                             ?>
-                            <p style="color: white"><?php echo $_SESSION['name']; ?></p>
-                            <p style="color: white"><a href="logout_process.php">log out</a></p>
+                            <li><a href="signup.php"><span class="glyphicon glyphicon-user"></span> <?php echo $_SESSION['name']; ?></a></li>
+                            <li><a href="logout_process.php"><span class="glyphicon glyphicon-log-out"></span> log out</a></li>
+
                             <?php
                         } else {
                             ?>
