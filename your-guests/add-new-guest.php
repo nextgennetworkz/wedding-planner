@@ -12,7 +12,7 @@ if ($is_user_logged_in == "FALSE") {
 }
 ?>
 
-<form action="welcome.php" method="post">
+<form action="add-new-guest-process.php" method="post">
     <h1>New guest</h1>
     <fieldset>
         <legend>Add a new contact to your guest list:</legend>
