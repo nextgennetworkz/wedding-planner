@@ -1,4 +1,10 @@
 <?php
+/**
+ * Created by IntelliJ IDEA.
+ * User: Nishen Peiris
+ * Date: 3/29/18
+ * Time: 12:36 PM
+ */
 // Allow only logged in users
 include_once "../config/validate_session.php";
 include_once "../header_links.php";
@@ -10,7 +16,7 @@ if ($is_user_logged_in == "FALSE") {
 <section class="add-guest-sec">
     <div class="container add-guest-wrp">
         <button class="back-btn"><a href="overview.php">< Back</a></button>
-        <form action="welcome.php" method="post">
+        <form action=""add-new-guest-process.php" method="post">
             <h1>NEW GUEST</h1>
             <div class="row">
                 <div class="col-sm-6 left-content">
