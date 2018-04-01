@@ -8,7 +8,7 @@
 // Allow only logged in users
 include_once "../config/validate_session.php";
 if ($is_user_logged_in == "FALSE") {
-    header('Location: index.php');
+    header('Location: ../index.php');
 }
 
 # Retrieve data from the request
