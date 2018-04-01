@@ -244,10 +244,14 @@
 .main-caro-sec .carousel-inner .caro-text{
     position: absolute;
      bottom: 20%;
-    left: 30%;
+    left: 33.33%;
     color: #ffffff;
     z-index: 10000;
     font-family: Arsenal-Regular;
+
+}
+.main-caro-sec .carousel-inner .caro-text h1{
+    font-size: 40px;
 }
 .main-caro-sec .item img{
     filter: brightness(70%);
