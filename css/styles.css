@@ -48,6 +48,38 @@
 .navbar-brand{
     padding: 12px;
 }
+.main-header .dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.main-header .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    margin-left: 0px;
+    padding-left: 0;
+}
+.main-header .dropdown-content li{
+    list-style: none;
+}
+.main-header .dropdown-content a {
+    color: black;
+    padding: 5px 10px;
+    text-decoration: none;
+    display: block;
+}
+
+.main-header .dropdown-content a:hover {background-color: #ddd}
+
+.main-header .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
 /*...........................login.....................................*/
 .overlay {
     height: 100%;
@@ -244,11 +276,16 @@
 .main-caro-sec .carousel-inner .caro-text{
     position: absolute;
      bottom: 20%;
-    left: 30%;
+    left: 33.33%;
     color: #ffffff;
     z-index: 10000;
     font-family: Arsenal-Regular;
 }
+.main-caro-sec .carousel-inner .caro-text h1 a{
+    color: #ffffff;
+    font-size: 45px;
+}
+
 .main-caro-sec .item img{
     filter: brightness(70%);
 }
@@ -267,6 +304,11 @@
 .overview-sec{
     background: #f0f0f0;
     min-height: 100vh;
+    padding: 20px 20px;
+}
+.overview-sec table{
+    margin-top: 30px;
+    font-family: Roboto-Light;
 }
 .overview-sec .overview-cont{
     background: #e2e2e2;
@@ -368,6 +410,66 @@ a{
     border: none;
 }
 .add-guest-sec button a{
+    text-decoration: none;
+    color: #ffffff;
+}
+/*.................................profile edit................................*/
+.profile-edit-sec{
+    background: #f0f0f0;
+    min-height: 100vh;
+    padding: 40px 90px;
+}
+.profile-edit-sec .form-sec{
+    -webkit-box-shadow: 3px 10px 27px 10px rgba(168,168,168,1);
+    -moz-box-shadow: 3px 10px 27px 10px rgba(168,168,168,1);
+    box-shadow: 3px 10px 27px 10px rgba(168,168,168,1);
+    padding: 30px;
+    background: #dff3fd;
+    font-family: Roboto-Light;
+}
+.profile-edit-sec .form-sec h1{
+    text-align: center;
+    font-size: 45px;
+    color: #204d74;
+}
+.profile-edit-sec input{
+    border: inherit;
+    padding: 7px;
+    border-radius: 4px;
+    width: 70%;
+}
+
+.profile-edit-sec .left-content input{
+    width: 70%;
+}
+.profile-edit-sec .input-wrp{
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+.profile-edit-sec select{
+    padding: 5px;
+    border-radius: 4px;
+}
+.profile-edit-sec .add-btn{
+    padding: 10px 40px;
+    color: #ffffff;
+    background: #245580;
+    border-radius: 5px;
+    font-size: 20px;
+    border: none;
+    margin-top: 20px;
+    width: 50%;
+}
+.profile-edit-sec .back-btn{
+    padding: 5px 30px;
+    font-size: 15px;
+    background: #43c4c5;
+    color: #ffffff;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 10px;
+}
+.profile-edit-sec button a{
     text-decoration: none;
     color: #ffffff;
 }

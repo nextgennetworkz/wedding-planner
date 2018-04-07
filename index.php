@@ -16,6 +16,7 @@
     <!----js---->
     <script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/script.js" type="text/javascript"></script>
 </head>
 <body>
 <?php
@@ -35,7 +36,11 @@ require_once 'main_header.php';
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             <div class="caro-text">
-                <h1>Join With us to plan your Dream day...</h1>
+                <h1>
+                    <a href="" class="typewrite" data-period="2000" data-type='[ "Do you planning your Dream day...?", "Lets plan it with in your own way", "Join with us to make it true..." ]'>
+                        <span class="wrap"></span>
+                    </a>
+                </h1>
             </div>
             <div class="item active">
                 <img src="img/wedding-reportage-1920x1000.jpg" class="img-responsive" alt="Chania"
