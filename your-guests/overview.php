@@ -47,8 +47,11 @@ $result_all_guests = mysqli_query($conn, "SELECT first_name, last_name, email, a
                     <h2><?php echo $_SESSION['name']; ?>, Let's add your guests to guest list.</h2>
                     <p><i class="fa fa-users"></i> <?php echo $no_of_attending_guests; ?> attending
                         | <?php echo $no_of_not_attending_guests; ?> not attending
-                        | <?php echo $no_of_not_notified_guests; ?> not notified. <a href="send-e-wedding-card.php">Send
-                            e-wedding card</a></p>
+                        | <?php echo $no_of_not_notified_guests; ?> not notified. <a
+                                href="/wedding-planner/your-guests/send-e-wedding-card.php">Send
+                            e-wedding card</a>
+                        | <a href="/wedding-planner/your-guests/send-e-thank-you-card.php">Send e-thank you card</a>
+                    </p>
                 </div>
             </div>
         </div>

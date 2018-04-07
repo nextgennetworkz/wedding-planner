@@ -16,26 +16,23 @@ if ($is_user_logged_in == "FALSE") {
 // user's id
 $userId = $_SESSION['id'];
 
-// fetch the wedding date
-//$wedding_date = "";
-
 // fetch username and partner's name
 $username = $_SESSION['name'];
 //$partner =
 
 // Fetch list of guest to whom invitations are not sent
-$query = "SELECT first_name, last_name, email FROM guest WHERE attendance = 'not_notified' AND user_id = $userId";
+$query = "SELECT first_name, last_name, email FROM guest WHERE user_id = $userId";
 $result_guests = mysqli_query($conn, $query);
 
 // Set mail subject
-$subject = "Save the date";
+$subject = "Thank you";
 // Set mail body
-$body = "We are getting married soon and we would like to share our special day with you. Please Save The Date!\n\nDate of the wedding: April 5, 2020\n\nYou are invited to visit our wedding website: https://myweddingvvv.zankyou.com\n\n";
+$body = "We want to take a moment to express our appreciation for your presence on our wedding day.\n\n";
 $body = $body . $username . " and " . $partner;
 ?>
 
 <form action="/wedding-planner/mail/send-mail.php" method="post">
-    <h1>SEND E-WEDDING CARD</h1>
+    <h1>SEND E-THANK YOU CARD</h1>
     <fieldset>
         <legend>Guest management</legend>
         <!-- Should be hidden at page load -->
@@ -53,7 +50,7 @@ $body = $body . $username . " and " . $partner;
         </div>
     </fieldset>
     <fieldset>
-        <legend>Invite your guests for your wedding</legend>
+        <legend>Say thank you to your guests</legend>
         <!-- When clicked guest-management div should be shown -->
         <a href="">Add more guests</a><br>
         Subject * <input type="text" id="subject" name="subject" required="required"
