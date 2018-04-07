@@ -280,6 +280,10 @@
     color: #ffffff;
     z-index: 10000;
     font-family: Arsenal-Regular;
+
+}
+.main-caro-sec .carousel-inner .caro-text h1{
+    font-size: 40px;
 }
 .main-caro-sec .carousel-inner .caro-text h1 a{
     color: #ffffff;
