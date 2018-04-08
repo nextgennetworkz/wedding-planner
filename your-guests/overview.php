@@ -40,6 +40,13 @@ $result_all_guests = mysqli_query($conn, "SELECT first_name, last_name, email, a
                     <p>Total guests</p>
                     <span><?php echo $no_of_total_guests; ?></span><br>
                     <button><a href="add-new-guest.php"><i class="fa fa-plus"></i> Add a Guest</a></button>
+                    or
+                    <!-- import guests from Excel sheet -->
+                    <form action="import-guests-from-excel.php" method="post" enctype="multipart/form-data">
+                        Upload an Excel sheet of guests:
+                        <input type="file" id="file_to_upload" name="file_to_upload" accept=".xlsx">
+                        <input type="submit" value="Upload" name="submit">
+                    </form>
                 </div>
             </div>
             <div class="col-sm-9">
