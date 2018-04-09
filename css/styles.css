@@ -33,7 +33,7 @@
 .main-header{
     border-radius: 0px;
     font-family: Roboto-Light;
-    background: #3e3431;
+    background:#2c8b8c;
     border: none;
     margin-bottom: 0px;
 }
@@ -384,6 +384,7 @@ a{
     border: inherit;
     padding: 7px;
     border-radius: 4px;
+    border: 1px solid #8bc5cc;
 }
 .add-guest-sec input:focus{
     outline: none;
@@ -422,25 +423,28 @@ a{
     background: #f0f0f0;
     min-height: 100vh;
     padding: 40px 90px;
+    background: url("../img/rings_couple_wedding_silver_flowers_80327_1920x1080.jpg");
+    background-size: cover;
 }
 .profile-edit-sec .form-sec{
     -webkit-box-shadow: 3px 10px 27px 10px rgba(168,168,168,1);
     -moz-box-shadow: 3px 10px 27px 10px rgba(168,168,168,1);
-    box-shadow: 3px 10px 27px 10px rgba(168,168,168,1);
+    box-shadow: 3px 10px 27px 10px rgb(83, 86, 105);
     padding: 30px;
-    background: #dff3fd;
+    background:#f1faff;
     font-family: Roboto-Light;
 }
 .profile-edit-sec .form-sec h1{
     text-align: center;
     font-size: 45px;
-    color: #204d74;
+    color: #43c4c5;
 }
 .profile-edit-sec input{
     border: inherit;
     padding: 7px;
     border-radius: 4px;
     width: 70%;
+    border: 1px solid #8bc5cc;
 }
 
 .profile-edit-sec .left-content input{
@@ -453,6 +457,7 @@ a{
 .profile-edit-sec select{
     padding: 5px;
     border-radius: 4px;
+    border: 1px solid #8bc5cc;
 }
 .profile-edit-sec .add-btn{
     padding: 10px 40px;
@@ -476,4 +481,70 @@ a{
 .profile-edit-sec button a{
     text-decoration: none;
     color: #ffffff;
+}
+/*................................................e thank you card ..............................*/
+.wedding-card-sec{
+    background: #f0f0f0;
+    min-height: 100vh;
+    padding: 40px 90px;
+    font-family: Arsenal-Regular;
+    background: url("../img/rings_couple_wedding_silver_flowers_80327_1920x1080.jpg");
+    background-size: cover;
+}
+.wedding-card-sec h1{
+    color: #43c4c5;
+    text-align: center;
+}
+.wedding-card-sec legend{
+    color: #204d74;
+}
+.wedding-card-sec select{
+    width: 15%;
+    font-size: 15px;
+    border: 1px solid #8bc5cc;
+    border-radius: 5px;
+    padding: 10px;
+
+}
+.wedding-card-sec input{
+    width: 100%;
+    font-size: 15px;
+    border: 1px solid #8bc5cc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.wedding-card-sec textarea{
+    font-size: 15px;
+    border: 1px solid #8bc5cc;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.wedding-card-sec span{
+    font-size: 18px;
+}
+.wedding-card-sec a{
+    margin-bottom: 20px;
+}
+.wedding-card-sec .form-wrp{
+    -webkit-box-shadow: 3px 10px 27px 10px rgba(168,168,168,1);
+    -moz-box-shadow: 3px 10px 27px 10px rgba(168,168,168,1);
+    box-shadow: 3px 10px 27px 10px rgb(83, 86, 105);
+    padding: 40px;
+    background: #f1faff;
+    font-family: Roboto-Light;
+}
+.wedding-card-sec button{
+    padding: 10px 40px;
+    color: #ffffff;
+    background: #245580;
+    border-radius: 5px;
+    font-size: 20px;
+    border: none;
+    margin-top: 20px;
+    width: 20%;
+    margin: auto;
+    display: block;
 }
