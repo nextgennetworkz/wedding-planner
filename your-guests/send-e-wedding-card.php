@@ -34,32 +34,42 @@ $body = "We are getting married soon and we would like to share our special day 
 $body = $body . $username . " and " . $partner;
 ?>
 
-<form action="/wedding-planner/mail/send-mail.php" method="post">
-    <h1>SEND E-WEDDING CARD</h1>
-    <fieldset>
-        <legend>Guest management</legend>
-        <!-- Should be hidden at page load -->
-        <div id="guest-management">
-            <select id="selected_guests" name="selected_guests[]" multiple="multiple">
-                <?php
-                while ($guest = mysqli_fetch_array($result_guests)) {
-                    ?>
-                    <option value="<?php echo $guest['email']; ?>"><?php echo $guest['first_name'] . " " . $guest['last_name']; ?></option>
-                    <?php
-                }
-                ?>
-            </select>
-            <p>Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.</p>
+<section class="wedding-card-sec">
+    <div class="container">
+        <div class="form-wrp">
+            <form action="/wedding-planner/mail/send-mail.php" method="post">
+                <h1>SEND E-WEDDING CARD</h1>
+                <fieldset>
+                    <legend>Guest management</legend>
+                    <!-- Should be hidden at page load -->
+                    <div id="guest-management">
+                        <a href="add-new-guest.php">Add more guests</a><br>
+                        <select id="selected_guests" name="selected_guests[]" multiple="multiple">
+                            <?php
+                            while ($guest = mysqli_fetch_array($result_guests)) {
+                                ?>
+                                <option value="<?php echo $guest['email']; ?>"><?php echo $guest['first_name'] . " " . $guest['last_name']; ?></option>
+                            <?php
+                            }
+                            ?>
+                        </select>
+                        <p>Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.</p>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Invite your guests for your wedding</legend>
+                    <!-- When clicked guest-management div should be shown -->
+
+                    <span>Subject *</span><br>
+                    <input type="text" id="subject" name="subject" required="required"
+                           value="<?php echo $subject; ?>"><br>
+                    <span>Message *</span><br>
+                    <textarea id="message" name="message" required="required" rows="8"
+                              cols="100"><?php echo $body; ?></textarea>
+                </fieldset>
+                <button>Send</button>
+            </form>
         </div>
-    </fieldset>
-    <fieldset>
-        <legend>Invite your guests for your wedding</legend>
-        <!-- When clicked guest-management div should be shown -->
-        <a href="">Add more guests</a><br>
-        Subject * <input type="text" id="subject" name="subject" required="required"
-                         value="<?php echo $subject; ?>"><br>
-        Message * <textarea id="message" name="message" required="required" rows="8"
-                            cols="100"><?php echo $body; ?></textarea>
-    </fieldset>
-    <button>Send</button>
-</form>
+    </div>
+</section>
+
