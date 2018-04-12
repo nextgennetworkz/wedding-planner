@@ -13,9 +13,7 @@ if ($is_user_logged_in == "FALSE") {
 $user_id = $_SESSION['id'];
 // Upload the Excel file
 $target_dir = "../temp/";
-//$target_file = $target_dir . basename($_FILES["file_to_upload"]["name"]);
 $target_file = $target_dir . $user_id . ".xlsx";
-$uploadOk = 1;
 // Check if file already exists
 if (file_exists($target_file)) {
     // If file exists, remove it
