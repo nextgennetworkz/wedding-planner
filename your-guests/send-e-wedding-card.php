@@ -43,8 +43,7 @@ $body = $body . $username . " and " . $partner;
                     <legend>Guest management</legend>
                     <!-- Should be hidden at page load -->
                     <div id="guest-management">
-                        <a href="add-new-guest.php">Add more guests</a><br>
-                        <select id="selected_guests" name="selected_guests[]" multiple="multiple">
+                        <select id="selected_guests" name="selected_guests[]" multiple="multiple" style="width: 100%">
                             <?php
                             while ($guest = mysqli_fetch_array($result_guests)) {
                                 ?>

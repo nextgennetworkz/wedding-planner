@@ -36,7 +36,7 @@ include_once "config/validate_session.php";
                                             class="glyphicon glyphicon-user"></span> <?php echo $_SESSION['name']; ?>
                                 </a>
                                 <ul class="dropdown-content">
-                                    <li><a href="me/edit-profile.php">Edit Profile</a></li>
+                                    <li><a href="/wedding-planner/me/edit-profile.php">Edit Profile</a></li>
                                     <li><a href="logout_process.php">Log out</a></li>
                                 </ul>
                             </li>
