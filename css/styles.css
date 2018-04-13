@@ -327,7 +327,7 @@
     font-size: 17px;
     padding-bottom: 0px;
 }
-.overview-sec .overview-cont .count-wrp span{
+.overview-sec .overview-cont .count-wrp .number{
     font-family: Arsenal-Regular;
     font-weight: 800;
     font-size: 35px;
@@ -339,7 +339,7 @@
     border-radius: 7px;
     margin-left: 16px;
 }
-.overview-sec .overview-cont .count-wrp button{
+.overview-sec .overview-cont .count-wrp .add-btn{
     width: 100%;
     background: #43c4c5;
     padding: 15px;
@@ -364,6 +364,44 @@ a{
     font-size: 17px;
     padding: 15px;
 }
+#fileupload-example-5 {
+    font-family: Arsenal-Regular;
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+    border: none;
+    text-decoration: underline;
+    color: #465086;
+}
+
+#fileupload-example-5 input {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.001
+}
+.overview-sec .overview-cont .upload{
+    background: transparent;
+    border: none;
+}
+.upload-btn-wrapper input[type=file] {
+    font-size: 15px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+.overview-sec .overview-cont .upload-file {
+    border: none;
+    background: #2c8b8c;
+    padding: 5px 10px;
+    border-radius: 3px;
+    color: #ffffff;
+    font-size: 13px;
+}
+
 /*............................................add new guest page.............................*/
 .add-guest-sec{
     font-family: Arsenal-Regular;
@@ -547,4 +585,9 @@ a{
     width: 20%;
     margin: auto;
     display: block;
+}
+.inputfile{
+    width: 0.1px;
+    height: 0.1px;
+
 }
