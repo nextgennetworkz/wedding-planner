@@ -5,14 +5,12 @@
  * Date: 3/24/18
  * Time: 8:11 PM
  */
-// Db connction
+// Db connection
 include_once "config/db_connection.php";
-
 # Retrieve data from the request
 $name = $_POST['name'];
 $email = $_POST['email'];
 $password = $_POST['password'];
-
 # Validate the params retrieved from the POST request
 if ((empty($name)) || (empty($email)) || (empty($password))) {
     ?>
@@ -23,9 +21,7 @@ if ((empty($name)) || (empty($email)) || (empty($password))) {
     <?php
     exit();
 }
-
 $encrypted_password = md5($password); // Encrypt password
-
 # If a user has already signed up with the same email, alert the new user and abort the registration
 $result_user = mysqli_query($conn, "SELECT * FROM user WHERE email = '$email'");
 $user = mysqli_fetch_array($result_user);
@@ -36,11 +32,16 @@ if (!empty($user)) {
         window.location.replace("signup.php");
     </script>
     <?php
-    exit();
+    die();
 }
-
-# Let's insert the user into the Db
-$result_insert_user = mysqli_query($conn, "INSERT INTO user (name, email, password) VALUES ('$name', '$email', '$encrypted_password')");
+// Let's generate an activation code
+$activation_code = rand();
+// Let's insert the user into the pending verification state for email verification
+$result_insert_user = mysqli_query($conn, "INSERT INTO user_pending_verification (name, email, password, activation_code) VALUES ('$name', '$email', '$encrypted_password', '$activation_code')");
+// Let's send the activation code via email
+$subject = "Welcome to Wedding Dreamer.";
+$message = "Please use the below activation code to activate your Wedding Dreamer account.\n" . $activation_code;
+mail($email, $subject, $message);
 if (empty($result_insert_user)) {
     ?>
     <script type="text/javascript">
@@ -48,12 +49,10 @@ if (empty($result_insert_user)) {
         window.location.replace("signup.php");
     </script>
     <?php
-    exit();
+    die();
 }
 ?>
-
-<!-- Redirect to login page, so the user can login to the newly created account -->
+<!-- Redirect to email verification page, so the user can verify to the newly created account -->
 <script type="text/javascript">
-    alert("Sign up succeeded.\nPlease login to continue.");
-    window.location.replace("signup.php#");
+    window.location.replace("verify_email.php?email=<?php echo $email; ?>");
 </script>
