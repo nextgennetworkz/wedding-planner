@@ -2,13 +2,16 @@
 /**
  * Created by IntelliJ IDEA.
  * User: Nishen Peiris
- * Date: 4/12/18
- * Time: 7:06 PM
+ * Date: 4/14/18
+ * Time: 11:49 AM
  */
 include_once "../config/db_connection.php";
 // Let's get the user, whose website is being visited
 if (!empty($_GET['user_id'])) {
     $user_id = $_GET['user_id'];
+    // Let's fetch the foreign inventories of this user
+    $query_load_foreign_inventories = "SELECT url FROM foreign_inventory WHERE user_id = $user_id";
+    $result_foreign_inventories = mysqli_query($conn, $query_load_foreign_inventories);
 } else {
     ?>
     <script type="text/javascript">
@@ -28,14 +31,24 @@ if ($result_required_user_details) {
     ?>
     <!-- Let's create the home page -->
     <?php include_once "website-navigation.php"; ?>
-    <img src="us.jpg">
-    <p>
-        Dear Family and Friends, Please fasten your seatbelts, and get ready for our next destination: OUR WEDDING
-        CELEBRATION! We are delighted to share this special adventure with those of you who will be joining us at our
-        celebration and of course those who will be present in our hearts! On this website you will find all the details
-        about our party. If you need any help, please let us know! We will be posting information regularly so stay
-        tuned. Looking forward to seeing you all soon! Love,
-    </p>
+    <!-- Let's display the list of foreign inventories -->
+    <table>
+        <thead>
+        <tr>URL</tr>
+        </thead>
+        <tbody>
+        <?php
+        while ($foreign_inventory = mysqli_fetch_assoc($result_foreign_inventories)) {
+            ?>
+            <tr>
+                <td><a href="<?php echo $foreign_inventory['url']; ?>"
+                       target="_blank"><?php echo $foreign_inventory['url']; ?></a></td>
+            </tr>
+            <?php
+        }
+        ?>
+        </tbody>
+    </table>
     <?php
 } else {
     ?>
