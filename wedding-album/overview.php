@@ -7,6 +7,8 @@
  */
 // Allow only logged in users
 include_once "../config/validate_session.php";
+include_once "../header_links.php";
+include_once "../main_header.php";
 if ($is_user_logged_in == "FALSE") {
     header('Location: ../index.php');
 }
@@ -15,38 +17,54 @@ $user_id = $_SESSION['id']; // current users's id
 $query = "SELECT id, caption, photo_name FROM wedding_album WHERE user_id = '$user_id';";
 $result_photos = mysqli_query($conn, $query);
 ?>
-<!-- This div contains all components related to photo upload -->
-<div id="upload_photos">
-    <form id="upload_photos_form" action="upload-image.php" method="post" enctype='multipart/form-data'>
-        <h1>Wedding album</h1>
-        <fieldset>
-            <legend>Upload photos to your wedding album</legend>
-            <img id="preview_image" width="100vw"/><br>
-            Select photo to upload:
-            <input type="file" id="file_to_upload" name="file_to_upload"
-                   accept="image/jpeg, image/pjpeg, image/bmp, image/gif, image/jpg, image/png" required="required"
-                   onchange="preview(this);"><br>
-            Caption:
-            <input type="text" id="caption" name="caption" required="required"><br>
-            <input type="submit" value="Add to album" name="submit">
-        </fieldset>
-    </form>
-</div>
+<section class="wedding-album-sec">
+    <button class="back-btn"><a href="../index.php">< Back</a></button>
+    <div class="container form-sec">
+        <!-- This div contains all components related to photo upload -->
+        <div id="upload_photos">
+            <form id="upload_photos_form" action="upload-image.php" method="post" enctype='multipart/form-data'>
+                <h1>WEDDING ALBUM</h1>
+                <fieldset>
+                    <legend>Upload photos to your wedding album</legend>
+                    <img id="preview_image" width="100vw"/><br>
+                    <span>Select photo to upload</span><br>
+                    <input type="file" id="file_to_upload" name="file_to_upload"
+                           accept="image/jpeg, image/pjpeg, image/bmp, image/gif, image/jpg, image/png" required="required"
+                           onchange="preview(this);"><br>
+                    <span>Caption</span><br>
+                    <input type="text" id="caption" name="caption" required="required"><br>
+<!--                    <input type="submit" value="Add to album" name="submit" class="submit_btn">-->
+                    <button type="submit" name="submit">Add to Album</button>
+                </fieldset>
+            </form>
+            <!-- This div contains all components related to photo display -->
+            <div id="display_photos">
+                <div class="demo-gallery">
+                    <h2>MY WEDDING ALBUM</h2>
+                    <ul id="lightgallery" class="list-unstyled row">
+                        <?php
+                        while ($photo = mysqli_fetch_assoc($result_photos)) {
+                            ?>
 
-<!-- This div contains all components related to photo display -->
-<div id="display_photos">
-    <?php
-    while ($photo = mysqli_fetch_assoc($result_photos)) {
-        ?>
-        <div>
-            <img width="150vw" src="<?php echo $photo['photo_name']; ?>"><br>
-            <?php echo $photo['caption']; ?><br>
-            <a href="delete-photo.php?id=<?php echo $photo['id']; ?>">delete</a><br>
+                            <li class="col-xs-6 col-sm-4 col-md-3" data-src="<?php echo $photo['photo_name']; ?>" data-sub-html="<h4><?php echo $photo['caption']; ?></h4><p><a href='delete-photo.php?id=<?php echo $photo['id']; ?>'> Delete</a></p>">
+                                <a href="">
+                                    <img class="img-responsive" src="<?php echo $photo['photo_name']; ?>">
+                                </a>
+                            </li>
+                        <?php
+                        }
+                        ?>
+                    </ul>
+
+                </div>
+            </div>
         </div>
-        <?php
-    }
-    ?>
-</div>
+    </div>
+</section>
+
+
+
+
 
 <!-- Script to preview when the image is selected -->
 <script type="text/javascript">
@@ -60,3 +78,13 @@ $result_photos = mysqli_query($conn, $query);
         }
     }
 </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#lightgallery').lightGallery();
+        });
+    </script>
+<?php
+
+include_once "../footer_links.php";
+
+?>

@@ -19,10 +19,8 @@ include_once "config/validate_session.php";
                         <?php
                         if ($is_user_logged_in == "TRUE") {
                             ?>
-                            <li><a href="your-guests/overview.php"><span class="glyphicon glyphicon-user"></span> Guests</a>
-                            </li>
-                            <li><a href="#"> Page 2</a></li>
-
+                            <li><a href="your-guests/overview.php"><span class="glyphicon glyphicon-user"></span> Guests</a></li>
+                            <li><a href="wedding-album/overview.php"><span class="glyphicon glyphicon-picture"></span> Wedding Album</a></li>
                             <?php
                         }
                         ?>
