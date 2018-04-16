@@ -84,7 +84,5 @@ $result_photos = mysqli_query($conn, $query);
         });
     </script>
 <?php
-
 include_once "../footer_links.php";
-
 ?>
