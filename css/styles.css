@@ -33,7 +33,7 @@
 .main-header{
     border-radius: 0px;
     font-family: Roboto-Light;
-    background:#2c8b8c;
+    background:#39acad;
     border: none;
     margin-bottom: 0px;
 }
@@ -547,4 +547,199 @@ a{
     width: 20%;
     margin: auto;
     display: block;
+}
+/*..................................wedding album.......................*/
+.wedding-album-sec{
+    background: #f0f0f0;
+    min-height: 100vh;
+    padding: 40px 90px;
+    background: url("../img/maxresdefault.jpg");
+    background-size: cover;
+}
+.wedding-album-sec .form-sec{
+    -webkit-box-shadow: 3px 10px 27px 10px rgba(168,168,168,1);
+    -moz-box-shadow: 3px 10px 27px 10px rgba(168,168,168,1);
+    box-shadow: 3px 10px 27px 10px rgb(83, 86, 105);
+    padding: 30px;
+    background:#f1faff;
+    font-family: Roboto-Light;
+}
+.wedding-album-sec .form-sec h1{
+    text-align: center;
+    font-size: 45px;
+    color: #43c4c5;
+}
+.wedding-album-sec input{
+    padding: 7px;
+    border-radius: 4px;
+    width: 100%;
+    border: 1px solid #8bc5cc;
+    margin-bottom: 10px;
+}
+
+.wedding-album-sec .left-content input{
+    width: 70%;
+}
+.wedding-album-sec .input-wrp{
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+.wedding-album-sec select{
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #8bc5cc;
+}
+
+.wedding-album-sec .back-btn{
+    padding: 5px 30px;
+    font-size: 15px;
+    background: #43c4c5;
+    color: #ffffff;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 10px;
+}
+.wedding-album-sec button a{
+    text-decoration: none;
+    color: #ffffff;
+}
+.wedding-album-sec legend{
+    color: #204d74;
+}
+.wedding-album-sec #upload_photos button{
+    padding: 10px 40px;
+    color: #ffffff;
+    background: #245580;
+    border-radius: 5px;
+    font-size: 20px;
+    border: none;
+    margin-top: 20px;
+    width: 20%;
+    margin: auto;
+    display: block;
+}
+/*.............................wedding album gallery................................*/
+.demo-gallery > ul {
+    margin-bottom: 0;
+}
+.demo-gallery > ul > li {
+    float: left;
+    margin-bottom: 15px;
+    margin-right: 20px;
+    width: 200px;
+}
+.demo-gallery > ul > li a {
+    border: 3px solid #c7eaea;
+    border-radius: 3px;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    float: left;
+}
+.demo-gallery > ul > li a > img {
+    -webkit-transition: -webkit-transform 0.15s ease 0s;
+    -moz-transition: -moz-transform 0.15s ease 0s;
+    -o-transition: -o-transform 0.15s ease 0s;
+    transition: transform 0.15s ease 0s;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+    height: 100%;
+    width: 100%;
+}
+.demo-gallery > ul > li a:hover > img {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1);
+}
+.demo-gallery > ul > li a:hover .demo-gallery-poster > img {
+    opacity: 1;
+}
+.demo-gallery > ul > li a .demo-gallery-poster {
+    background-color: rgba(0, 0, 0, 0.1);
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    -webkit-transition: background-color 0.15s ease 0s;
+    -o-transition: background-color 0.15s ease 0s;
+    transition: background-color 0.15s ease 0s;
+}
+.demo-gallery > ul > li a .demo-gallery-poster > img {
+    left: 50%;
+    margin-left: -10px;
+    margin-top: -10px;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    -webkit-transition: opacity 0.3s ease 0s;
+    -o-transition: opacity 0.3s ease 0s;
+    transition: opacity 0.3s ease 0s;
+}
+.demo-gallery > ul > li a:hover .demo-gallery-poster {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.demo-gallery .justified-gallery > a > img {
+    -webkit-transition: -webkit-transform 0.15s ease 0s;
+    -moz-transition: -moz-transform 0.15s ease 0s;
+    -o-transition: -o-transform 0.15s ease 0s;
+    transition: transform 0.15s ease 0s;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+    height: 100%;
+    width: 100%;
+}
+.demo-gallery .justified-gallery > a:hover > img {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1);
+}
+.demo-gallery .justified-gallery > a:hover .demo-gallery-poster > img {
+    opacity: 1;
+}
+.demo-gallery .justified-gallery > a .demo-gallery-poster {
+    background-color: rgba(0, 0, 0, 0.1);
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    -webkit-transition: background-color 0.15s ease 0s;
+    -o-transition: background-color 0.15s ease 0s;
+    transition: background-color 0.15s ease 0s;
+}
+.demo-gallery .justified-gallery > a .demo-gallery-poster > img {
+    left: 50%;
+    margin-left: -10px;
+    margin-top: -10px;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    -webkit-transition: opacity 0.3s ease 0s;
+    -o-transition: opacity 0.3s ease 0s;
+    transition: opacity 0.3s ease 0s;
+}
+.demo-gallery .justified-gallery > a:hover .demo-gallery-poster {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.demo-gallery .video .demo-gallery-poster img {
+    height: 48px;
+    margin-left: -24px;
+    margin-top: -24px;
+    opacity: 0.8;
+    width: 48px;
+}
+.demo-gallery.dark > ul > li a {
+    border: 3px solid #04070a;
+}
+.home .demo-gallery {
+    padding-bottom: 80px;
+}
+#display_photos{
+   border: 2px solid #23527c;
+    margin-top: 35px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+#display_photos h2{
+    color: #43c4c5;
 }
