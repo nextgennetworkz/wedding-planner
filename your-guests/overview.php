@@ -38,15 +38,20 @@ $result_all_guests = mysqli_query($conn, "SELECT first_name, last_name, email, a
             <div class="col-sm-3">
                 <div class="count-wrp">
                     <p>Total guests</p>
-                    <span><?php echo $no_of_total_guests; ?></span><br>
-                    <button><a href="add-new-guest.php"><i class="fa fa-plus"></i> Add a Guest</a></button>
+                    <span class="number"><?php echo $no_of_total_guests; ?></span><br>
+                    <button class="add-btn"><a href="add-new-guest.php"><i class="fa fa-plus"></i> Add a Guest</a></button>
                     or
                     <!-- import guests from Excel sheet -->
                     <form action="import-guests-from-excel.php" method="post" enctype="multipart/form-data">
-                        Upload an Excel sheet of guests:
-                        <input type="file" id="file_to_upload" name="file_to_upload" accept=".xlsx">
-                        <input type="submit" value="Upload" name="submit">
+                        <p>Upload an Excel sheet of guests:</p>
+<!--                        <input type="file" id="file_to_upload" name="file_to_upload" accept=".xlsx" >-->
+                        <button id="fileupload-example-5" id="file_to_upload" name="file_to_upload" accept=".xlsx">
+                            <input type="file">
+                            <span>Select a File</span>
+                        </button><br>
+                        <input type="submit" value="Upload" name="submit" class="upload-file">
                     </form>
+
                 </div>
             </div>
             <div class="col-sm-9">
@@ -54,9 +59,8 @@ $result_all_guests = mysqli_query($conn, "SELECT first_name, last_name, email, a
                     <h2><?php echo $_SESSION['name']; ?>, Let's add your guests to guest list.</h2>
                     <p><i class="fa fa-users"></i> <?php echo $no_of_attending_guests; ?> attending
                         | <?php echo $no_of_not_attending_guests; ?> not attending
-                        | <?php echo $no_of_not_notified_guests; ?> not notified. <a
-                                href="/wedding-planner/your-guests/send-e-wedding-card.php">Send
-                            e-wedding card</a>
+                        | <?php echo $no_of_not_notified_guests; ?> not notified.<br>
+                        <i class="fa fa-envelope"></i> <a href="/wedding-planner/your-guests/send-e-wedding-card.php"> Send e-wedding card</a>
                         | <a href="/wedding-planner/your-guests/send-e-thank-you-card.php">Send e-thank you card</a>
                     </p>
                 </div>

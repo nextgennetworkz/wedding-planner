@@ -8,4 +8,4 @@
 session_start();
 session_unset(); // remove all session variables
 session_destroy(); // destroy the session
-header('Location: index.php'); // redirect to home
+header('Location: /wedding-planner/index.php'); // redirect to home

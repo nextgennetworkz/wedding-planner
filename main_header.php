@@ -35,7 +35,7 @@ include_once "config/validate_session.php";
                                 </a>
                                 <ul class="dropdown-content">
                                     <li><a href="/wedding-planner/me/edit-profile.php">Edit Profile</a></li>
-                                    <li><a href="logout_process.php">Log out</a></li>
+                                    <li><a href="/wedding-planner/logout_process.php">Log out</a></li>
                                 </ul>
                             </li>
 
@@ -75,10 +75,12 @@ include_once "config/validate_session.php";
                         </div>
                         <button>Login</button>
                     </form>
-                    <h5>Or Login With Social Media</h5>
                     <div class="social-links">
-                        <a><i class="fa fa-facebook-square"></i></a>
-                        <a><i class="fa fa-google-plus-square"></i></a>
+                        <h5>Or Login with social media</h5>
+                        <div class="social-links">
+                            <a href="sign_up_facebook.php"><i class="fa fa-facebook-square"></i></a>
+                            <!--<a href="sign_up_google_plus.php"><i class="fa fa-google-plus-square"></i></a>-->
+                        </div>
                     </div>
                     <span>Don't you have an account? <a>Sign up today</a></span>
                 </div>

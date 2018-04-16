@@ -25,7 +25,7 @@
                         <h5>Or Signup with social media</h5>
                         <div class="social-links">
                             <a href="sign_up_facebook.php"><i class="fa fa-facebook-square"></i></a>
-                            <a href="sign_up_google_plus.php"><i class="fa fa-google-plus-square"></i></a>
+                            <!--<a href="sign_up_google_plus.php"><i class="fa fa-google-plus-square"></i></a>-->
                         </div>
                     </div>
                 </form>

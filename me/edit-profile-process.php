@@ -29,6 +29,7 @@ if ($result_update_profile) {
         window.location.replace("edit-profile.php");
     </script>
     <?php
+    die();
 } else {
     ?>
     <script type="text/javascript">
@@ -36,4 +37,5 @@ if ($result_update_profile) {
         window.location.replace("edit-profile.php");
     </script>
     <?php
+    die();
 }

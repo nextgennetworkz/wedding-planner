@@ -99,7 +99,7 @@
                         // Already signed up user is trying to sign up again.
                         // Let's ask to login.
                         console.log("Already signed up user is trying to sign up again.");
-                        alert("You'he already signed up. Therefore, you will be logged in.");
+                        //alert("You'he already signed up. Therefore, you will be logged in.");
                         window.location.replace("index.php");
                     } else {
                         alert("Something went wrong.\nYou can try again or skip for now.")
