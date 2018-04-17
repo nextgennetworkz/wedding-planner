@@ -24,7 +24,7 @@ if (!empty($_POST['foreign_inventory_id'])) {
         ?>
         <script type="text/javascript">
             alert("Inventory updating succeeded.");
-            window.location.replace("overview.php");
+            window.location.replace("foreign-inventory.php");
         </script>
         <?php
         die();
@@ -32,7 +32,7 @@ if (!empty($_POST['foreign_inventory_id'])) {
         ?>
         <script type="text/javascript">
             alert("Something went wrong while updating the inventory.\nYou can try again or skip for now.\n<?php echo mysqli_error($conn); ?>");
-            window.location.replace("overview.php");
+            window.location.replace("foreign-inventory.php");
         </script>
         <?php
         die();
@@ -45,7 +45,7 @@ if (!empty($_POST['foreign_inventory_id'])) {
         ?>
         <script type="text/javascript">
             alert("Inventory adding succeeded.");
-            window.location.replace("overview.php");
+            window.location.replace("foreign-inventory.php");
         </script>
         <?php
         die();
@@ -53,7 +53,7 @@ if (!empty($_POST['foreign_inventory_id'])) {
         ?>
         <script type="text/javascript">
             alert("Something went wrong while adding the inventory.\nYou can try again or skip for now.\n<?php echo mysqli_error($conn); ?>");
-            window.location.replace("overview.php");
+            window.location.replace("foreign-inventory.php");
         </script>
         <?php
         die();
