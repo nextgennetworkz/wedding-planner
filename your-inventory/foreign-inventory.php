@@ -7,6 +7,8 @@
  */
 // Allow only logged in users
 include_once "../config/validate_session.php";
+include_once "../header_links.php";
+include_once "../main_header.php";
 if ($is_user_logged_in == "FALSE") {
     header('Location: ../index.php');
 }
@@ -34,15 +36,30 @@ if (isset($_GET['id'])) {
     $foreign_inventory_id = $url = "";
 }
 ?>
-<form id="add_or_edit_foreign_inventory_form" name="add_or_edit_foreign_inventory_form"
-      action="foreign-inventory-process.php" method="post">
-    <h1>INVENTORY MANAGEMENT</h1>
-    <fieldset>
-        <legend>Add URLs of foreign inventory</legend>
-        <input type="hidden" id="foreign_inventory_id" name="foreign_inventory_id"
-               value="<?php echo $foreign_inventory_id; ?>">
-        URL:
-        <input type="text" id="url" name="url" required="required" value="<?php echo $url; ?>"><br>
-        <input type="submit" value="Save">
-    </fieldset>
-</form>
+<section class="inventory-sec">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <form id="add_or_edit_foreign_inventory_form" name="add_or_edit_foreign_inventory_form"
+                      action="foreign-inventory-process.php" method="post">
+                    <h1>INVENTORY MANAGEMENT</h1>
+                    <fieldset>
+                        <legend>Add URLs of foreign inventory</legend>
+                        <input type="hidden" id="foreign_inventory_id" name="foreign_inventory_id"
+                               value="<?php echo $foreign_inventory_id; ?>">
+                        <span>URL</span>
+                        <input type="text" id="url" name="url" required="required" value="<?php echo $url; ?>"><br>
+                        <button>Save</button>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="col-sm-4">
+                <div class="inventory-wrp">
+                    <a href="view-foreign-inventories.php"><span class="glyphicon glyphicon-briefcase"></span> View My<br> Foreign Inventory</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+

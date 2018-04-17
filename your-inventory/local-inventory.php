@@ -7,6 +7,8 @@
  */
 // Allow only logged in users
 include_once "../config/validate_session.php";
+include_once "../header_links.php";
+include_once "../main_header.php";
 if ($is_user_logged_in == "FALSE") {
     header('Location: ../index.php');
 }
@@ -40,31 +42,46 @@ if (isset($_GET['id'])) {
     $local_inventory_id = $name = $description = $price = $color = $selected_color_id = "";
 }
 ?>
-<form id="add_or_edit_local_inventory_form" name="add_or_edit_local_inventory_form"
-      action="local-inventory-process.php" method="post">
-    <h1>INVENTORY MANAGEMENT</h1>
-    <fieldset>
-        <legend>Add a local inventory</legend>
-        <input type="hidden" id="local_inventory_id" name="local_inventory_id"
-               value="<?php echo $local_inventory_id; ?>">
-        Name:
-        <input type="text" id="name" name="name" required="required" value="<?php echo $name; ?>"><br>
-        Description:
-        <input type="text" id="description" name="description" value="<?php echo $description; ?>"><br>
-        Price:
-        <input type="text" id="price" name="price" required="required" value="<?php echo $price; ?>"><br>
-        Color:
-        <select id="color" name="color" required="required">
-            <option value="" selected="selected" disabled="disabled">Select color</option>
-            <?php
-            while ($color = mysqli_fetch_assoc($result_colors)) {
-                ?>
-                <option value="<?php echo $color['id']; ?>" <?php echo($selected_color_id == $color['id'] ? 'selected="selected"' : '') ?>><?php echo $color['color']; ?></option>
-                <?php
-            }
-            ?>
-            ?>
-        </select><br>
-        <input type="submit" value="Save">
-    </fieldset>
-</form>
+<section class="inventory-sec">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <div>
+                    <form id="add_or_edit_local_inventory_form" name="add_or_edit_local_inventory_form"
+                          action="local-inventory-process.php" method="post">
+                        <h1>INVENTORY MANAGEMENT</h1>
+                        <fieldset>
+                            <legend>Add a local inventory</legend>
+                            <input type="hidden" id="local_inventory_id" name="local_inventory_id"
+                                   value="<?php echo $local_inventory_id; ?>">
+                            <span>Name:</span><br>
+                            <input type="text" id="name" name="name" required="required" value="<?php echo $name; ?>"><br>
+                            <span>Description:</span><br>
+                            <input type="text" id="description" name="description" value="<?php echo $description; ?>"><br>
+                            <span>Price:</span><br>
+                            <input type="text" id="price" name="price" required="required" value="<?php echo $price; ?>"><br>
+                            <span>Color:</span><br>
+                            <select id="color" name="color" required="required">
+                                <option value="" selected="selected" disabled="disabled">Select color</option>
+                                <?php
+                                while ($color = mysqli_fetch_assoc($result_colors)) {
+                                    ?>
+                                    <option value="<?php echo $color['id']; ?>" <?php echo($selected_color_id == $color['id'] ? 'selected="selected"' : '') ?>><?php echo $color['color']; ?></option>
+                                <?php
+                                }
+                                ?>
+                                ?>
+                            </select><br>
+                            <button>Save</button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="inventory-wrp">
+                    <a href="view-local-inventories.php"><span class="glyphicon glyphicon-briefcase"></span> View My<br> Local Inventory</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

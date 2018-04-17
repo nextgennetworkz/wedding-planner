@@ -147,6 +147,15 @@
     font-size: 14px;
     color: #ffffff;
 }
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus{
+    background-color: #39acad;
+}
+.navbar-nav>li>.dropdown-menu{
+    background: #b8e6dc;
+}
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.open>a{
+    background-image: linear-gradient(to bottom,#39acad 0,#39acad 100%);
+}
 .overlay-content .login-content .social-links .fa-facebook-square{
     color: #204d74;
     padding-right: 20px;
@@ -785,4 +794,74 @@ a{
 }
 #display_photos h2{
     color: #43c4c5;
+}
+/*....................................inventory page.........................................*/
+.inventory-sec{
+    min-height: 100vh;
+    background: #f0f0f0;
+    font-family: Arsenal-Regular;
+}
+.inventory-sec h1{
+    color: #43c4c5;
+}
+.inventory-sec legend {
+    color: #204d74;
+}
+.inventory-sec span {
+    font-size: 18px;
+}
+.inventory-sec input {
+    width: 100%;
+    font-size: 15px;
+    border: 1px solid #8bc5cc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.inventory-sec select {
+    width: 25%;
+    font-size: 15px;
+    border: 1px solid #8bc5cc;
+    border-radius: 5px;
+    padding: 10px;
+    background: #f0f0f0f;
+}
+.inventory-sec select:focus{
+    outline: none;
+}
+.inventory-sec button {
+    padding: 10px 40px;
+    color: #ffffff;
+    background: #245580;
+    border-radius: 5px;
+    font-size: 20px;
+    border: none;
+    margin-top: 20px;
+    width: 100%;
+}
+.inventory-sec .inventory-wrp{
+    padding: 25px;
+    background: #39acad;
+    text-align: center;
+    margin-top: 100px;
+    border-radius: 7px;
+}
+.inventory-sec .inventory-wrp a{
+    font-size: 30px;
+    color: #f0f0f0;
+}
+.view-inventory-sec{
+    min-height: 100vh;
+    background: #f0f0f0;
+    font-family: Arsenal-Regular;
+   padding: 40px;
+}
+.view-inventory-sec .table-striped>tbody>tr:nth-child(odd) {
+    background-color: #c7e4e8;
+}
+.view-inventory-sec thead{
+    font-size: 17px;
+}
+.view-inventory-sec tbody{
+    font-size: 15px;
 }

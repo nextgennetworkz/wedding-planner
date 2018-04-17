@@ -20,7 +20,7 @@ if ($result_delete_foreign_inventory) {
     ?>
     <script type="text/javascript">
         alert("Inventory deleting succeeded.");
-        window.location.replace("overview.php");
+        window.location.replace("view-foreign-inventories.php");
     </script>
     <?php
     die();
@@ -28,7 +28,7 @@ if ($result_delete_foreign_inventory) {
     ?>
     <script type="text/javascript">
         alert("Something went wrong while deleting the inventory.\nYou can try again or skip for now.\n<?php echo mysqli_error($conn); ?>");
-        window.location.replace("overview.php");
+        window.location.replace("view-foreign-inventories.php");
     </script>
     <?php
     die();
