@@ -6,6 +6,7 @@
  * Time: 11:49 AM
  */
 include_once "../config/db_connection.php";
+include_once "../header_links.php";
 // Let's get the user, whose website is being visited
 if (!empty($_GET['user_id'])) {
     $user_id = $_GET['user_id'];
@@ -46,54 +47,79 @@ if ($result_required_user_details) {
     $partner = $user_details['partner'];
     $wedding_date = $user_details['wedding_date'];
     ?>
-    <!-- Let's create the home page -->
-    <?php include_once "website-navigation.php"; ?>
-    <!-- Form to apply filters -->
-    <form id="filter_local_inventories_form" name="filter_local_inventories_form"
-          action="local-inventory.php" method="post">
-        <fieldset>
-            <legend>Filter local inventories</legend>
-            <input type="hidden" id="user_id" name="user_id" value="<?php echo $user_id; ?>">
-            Color:
-            <select id="color" name="color">
-                <option value="" selected="selected" disabled="disabled">Select color</option>
-                <?php
-                while ($color = mysqli_fetch_assoc($result_colors)) {
-                    ?>
-                    <option value="<?php echo $color['id']; ?>" <?php echo($selected_color_id == $color['id'] ? 'selected="selected"' : '') ?>><?php echo $color['color']; ?></option>
-                    <?php
-                }
-                ?>
-                ?>
-            </select><br>
-            Price (less than):
-            <input type="number" step="0.01" id="price" name="price"><br>
-            <input type="submit" value="Save">
-        </fieldset>
-    </form>
-    <!-- Let's display the list of local inventories -->
-    <table>
-        <thead>
-        <tr>Name</tr>
-        <tr>Description</tr>
-        <tr>Price</tr>
-        <tr>Color</tr>
-        </thead>
-        <tbody>
-        <?php
-        while ($local_inventory = mysqli_fetch_assoc($result_local_inventories)) {
-            ?>
-            <tr>
-                <td><?php echo $local_inventory['name']; ?></td>
-                <td><?php echo $local_inventory['description']; ?></td>
-                <td><?php echo $local_inventory['price']; ?></td>
-                <td><?php echo $local_inventory['color']; ?></td>
-            </tr>
-            <?php
-        }
-        ?>
-        </tbody>
-    </table>
+
+    <section class="myweb-home-sec">
+        <div class="container">
+            <div class="col-sm-push-1 col-sm-10">
+                <div class="myweb-home-container">
+                    <?php include_once "website-navigation.php"; ?>
+                    <div class="topnav" id="myTopnav">
+                        <a href="home.php?user_id=<?php echo $user_id; ?>" >Home</a>
+                        <a href="photo-album.php?user_id=<?php echo $user_id; ?>">Photo Album</a>
+                        <a href="local-inventory.php?user_id=<?php echo $user_id; ?>" class="active">Local inventory</a>
+                        <a href="foreign-inventory.php?user_id=<?php echo $user_id; ?>">Foreign inventory</a>
+                        <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+                    </div>
+                    <div class="inner-wrp">
+                        <form id="filter_local_inventories_form" name="filter_local_inventories_form"
+                              action="local-inventory.php" method="post">
+                            <fieldset>
+                                <legend>Filter Local Inventories</legend>
+                                <input type="hidden" id="user_id" name="user_id" value="<?php echo $user_id; ?>">
+                                <span>Color</span><br>
+                                <select id="color" name="color">
+                                    <option value="" selected="selected" disabled="disabled">Select color</option>
+                                    <?php
+                                    while ($color = mysqli_fetch_assoc($result_colors)) {
+                                        ?>
+                                        <option value="<?php echo $color['id']; ?>" <?php echo($selected_color_id == $color['id'] ? 'selected="selected"' : '') ?>><?php echo $color['color']; ?></option>
+                                    <?php
+                                    }
+                                    ?>
+                                    ?>
+                                </select><br>
+                                <span>Price (less than)</span><br>
+                                <input type="number" step="0.01" id="price" name="price"><br>
+                                <button>Save</button>
+                            </fieldset>
+                        </form>
+                        <!-- Let's display the list of local inventories -->
+                        <table class="table table-striped table-responsive">
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Price</th>
+                                <th>Color</th>
+                            </tr>
+
+                            </thead>
+                            <tbody>
+                            <?php
+                            while ($local_inventory = mysqli_fetch_assoc($result_local_inventories)) {
+                                ?>
+                                <tr>
+                                    <td><?php echo $local_inventory['name']; ?></td>
+                                    <td><?php echo $local_inventory['description']; ?></td>
+                                    <td><?php echo $local_inventory['price']; ?></td>
+                                    <td><?php echo $local_inventory['color']; ?></td>
+                                </tr>
+                            <?php
+                            }
+                            ?>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
     <?php
 } else {
     ?>

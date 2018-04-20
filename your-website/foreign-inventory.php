@@ -6,6 +6,7 @@
  * Time: 11:49 AM
  */
 include_once "../config/db_connection.php";
+include_once "../header_links.php";
 // Let's get the user, whose website is being visited
 if (!empty($_GET['user_id'])) {
     $user_id = $_GET['user_id'];
@@ -29,26 +30,47 @@ if ($result_required_user_details) {
     $partner = $user_details['partner'];
     $wedding_date = $user_details['wedding_date'];
     ?>
-    <!-- Let's create the home page -->
-    <?php include_once "website-navigation.php"; ?>
+    <section class="myweb-home-sec">
+        <div class="container">
+            <div class="col-sm-push-1 col-sm-10">
+                <div class="myweb-home-container">
+                    <?php include_once "website-navigation.php"; ?>
+                    <div class="topnav" id="myTopnav">
+                        <a href="home.php?user_id=<?php echo $user_id; ?>" >Home</a>
+                        <a href="photo-album.php?user_id=<?php echo $user_id; ?>">Photo Album</a>
+                        <a href="local-inventory.php?user_id=<?php echo $user_id; ?>" >Local inventory</a>
+                        <a href="foreign-inventory.php?user_id=<?php echo $user_id; ?>" class="active">Foreign inventory</a>
+                        <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+                    </div>
+                    <div class="inner-wrp">
+                        <table class="">
+                            <thead>
+                            <tr>URL</tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                            while ($foreign_inventory = mysqli_fetch_assoc($result_foreign_inventories)) {
+                                ?>
+                                <tr>
+                                    <td><a href="<?php echo $foreign_inventory['url']; ?>"
+                                           target="_blank"><?php echo $foreign_inventory['url']; ?></a></td>
+                                </tr>
+                            <?php
+                            }
+                            ?>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
     <!-- Let's display the list of foreign inventories -->
-    <table>
-        <thead>
-        <tr>URL</tr>
-        </thead>
-        <tbody>
-        <?php
-        while ($foreign_inventory = mysqli_fetch_assoc($result_foreign_inventories)) {
-            ?>
-            <tr>
-                <td><a href="<?php echo $foreign_inventory['url']; ?>"
-                       target="_blank"><?php echo $foreign_inventory['url']; ?></a></td>
-            </tr>
-            <?php
-        }
-        ?>
-        </tbody>
-    </table>
+
     <?php
 } else {
     ?>

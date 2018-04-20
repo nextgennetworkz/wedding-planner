@@ -22,7 +22,7 @@ include_once "config/validate_session.php";
                             <li><a href="/wedding-planner/your-guests/overview.php"><span class="glyphicon glyphicon-user"></span> Guests</a></li>
                             <li><a href="/wedding-planner/wedding-album/overview.php"><span class="glyphicon glyphicon-picture"></span> Wedding Album</a></li>
                             <li class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-briefcase"></span> Your Inventory
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-briefcase"></span> My Inventory
                                     <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="/wedding-planner/your-inventory/local-inventory.php">Local Inventory</a></li>
@@ -38,6 +38,7 @@ include_once "config/validate_session.php";
                         <?php
                         if ($is_user_logged_in == "TRUE") {
                             ?>
+                            <li><a href="/wedding-planner/your-website/home.php?user_id=<?php echo $_SESSION['id']; ?>" ><span class="glyphicon glyphicon-new-window"></span> My Website</a></li>
                             <li class="dropdown"><a href="signup.php"><span
                                             class="glyphicon glyphicon-user"></span> <?php echo $_SESSION['name']; ?>
                                 </a>
