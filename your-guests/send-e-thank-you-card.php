@@ -12,25 +12,20 @@ include_once "../main_header.php";
 if ($is_user_logged_in == "FALSE") {
     header('Location: ../index.php');
 }
-
-// user's id
-$userId = $_SESSION['id'];
-
+$userId = $_SESSION['id']; // user's id
 // fetch username and partner's name
 $username = $_SESSION['name'];
-//$partner =
-
+// Get partner's name
+$query_fetch_partner_name = "SELECT partner FROM user WHERE id = $userId";
+$result_partner_name = mysqli_query($conn, $query_fetch_partner_name);
+$partner = mysqli_fetch_assoc($result_partner_name)['partner'];
 // Fetch list of guest to whom invitations are not sent
 $query = "SELECT first_name, last_name, email FROM guest WHERE user_id = $userId";
 $result_guests = mysqli_query($conn, $query);
-
-// Set mail subject
-$subject = "Thank you";
-// Set mail body
-$body = "We want to take a moment to express our appreciation for your presence on our wedding day.\n\n";
-$body = $body . $username . " and " . $partner;
+$subject = "Thank you"; // Set mail subject
+$body = "We want to take a moment to express our appreciation for your presence on our wedding day.\n\n"; // Set mail body
+$body = $body . $username . " and " . $partner; // append names to body
 ?>
-
 <section class="wedding-card-sec">
     <div class="container">
         <div class="form-wrp">
@@ -45,7 +40,7 @@ $body = $body . $username . " and " . $partner;
                             while ($guest = mysqli_fetch_array($result_guests)) {
                                 ?>
                                 <option value="<?php echo $guest['email']; ?>"><?php echo $guest['first_name'] . " " . $guest['last_name']; ?></option>
-                            <?php
+                                <?php
                             }
                             ?>
                         </select>
@@ -57,10 +52,10 @@ $body = $body . $username . " and " . $partner;
                     <!-- When clicked guest-management div should be shown -->
                     <span>Subject *</span><br>
                     <input type="text" id="subject" name="subject" required="required"
-                                     value="<?php echo $subject; ?>"><br>
+                           value="<?php echo $subject; ?>"><br>
                     <span>Message *</span><br>
                     <textarea id="message" name="message" required="required" rows="8"
-                                        cols="100"><?php echo $body; ?></textarea>
+                              cols="100"><?php echo $body; ?></textarea>
                 </fieldset>
                 <button>Send</button>
             </form>
