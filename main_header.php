@@ -19,14 +19,14 @@ include_once "config/validate_session.php";
                         <?php
                         if ($is_user_logged_in == "TRUE") {
                             ?>
-                            <li><a href="your-guests/overview.php"><span class="glyphicon glyphicon-user"></span> Guests</a></li>
-                            <li><a href="wedding-album/overview.php"><span class="glyphicon glyphicon-picture"></span> Wedding Album</a></li>
+                            <li><a href="/wedding-planner/your-guests/overview.php"><span class="glyphicon glyphicon-user"></span> Guests</a></li>
+                            <li><a href="/wedding-planner/wedding-album/overview.php"><span class="glyphicon glyphicon-picture"></span> Wedding Album</a></li>
                             <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-briefcase"></span> Your Inventory
                                     <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="your-inventory/local-inventory.php">Local Inventory</a></li>
-                                    <li><a href="your-inventory/foreign-inventory.php">Foreign Inventory</a></li>
+                                    <li><a href="/wedding-planner/your-inventory/local-inventory.php">Local Inventory</a></li>
+                                    <li><a href="/wedding-planner/your-inventory/foreign-inventory.php">Foreign Inventory</a></li>
                                 </ul>
                             </li>
                             <?php
