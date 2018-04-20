@@ -16,6 +16,7 @@ $user_details = mysqli_fetch_assoc($result_required_user_details);
 $user_name = $user_details['name'];
 $partner = $user_details['partner'];
 $wedding_date = $user_details['wedding_date'];
+$wedding_date = explode(" ", $wedding_date)[0];
 // Load photos of the user
 $query_photos = "SELECT caption, photo_name FROM wedding_album WHERE user_id = $user_id;";
 $result_photos = mysqli_query($conn, $query_photos);

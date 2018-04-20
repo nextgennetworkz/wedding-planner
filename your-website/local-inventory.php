@@ -46,6 +46,7 @@ if ($result_required_user_details) {
     $user_name = $user_details['name'];
     $partner = $user_details['partner'];
     $wedding_date = $user_details['wedding_date'];
+    $wedding_date = explode(" ", $wedding_date)[0];
     ?>
 
     <section class="myweb-home-sec">
