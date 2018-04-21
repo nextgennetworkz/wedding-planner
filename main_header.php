@@ -38,7 +38,7 @@ include_once "config/validate_session.php";
                         <?php
                         if ($is_user_logged_in == "TRUE") {
                             ?>
-                            <li><a href="/wedding-planner/your-website/home.php?user_id=<?php echo $_SESSION['id']; ?>" ><span class="glyphicon glyphicon-new-window"></span> My Website</a></li>
+                            <li><a href="/wedding-planner/your-website/home.php?user_id=<?php echo $_SESSION['id']; ?>" target="_blank"><span class="glyphicon glyphicon-new-window"></span> My Website</a></li>
                             <li class="dropdown"><a href="signup.php"><span
                                             class="glyphicon glyphicon-user"></span> <?php echo $_SESSION['name']; ?>
                                 </a>
